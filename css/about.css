@@ -1,0 +1,133 @@
+/* Gallery styles */
+.gallery-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .gallery-item.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .hover-zoom {
+    transition: transform 0.5s ease;
+  }
+  
+  .hover-zoom:hover {
+    transform: scale(1.05);
+  }
+  
+  .reveal-gallery {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .reveal-gallery.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Testimonial slider */
+  .testimonial-slider-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #testimonial-slider {
+    overflow: hidden;
+  }
+  
+  #testimonial-slider .flex {
+    transition: transform 0.5s ease;
+  }
+  
+  #testimonial-dots button.active {
+    background-color: white;
+    width: 24px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  #testimonial-dots button {
+    transition: all 0.3s ease;
+  }
+  
+  /* FAQ styles */
+  .faq-item {
+    transition: background-color 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  .faq-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin 0.3s ease;
+    opacity: 0;
+  }
+  
+  .faq-answer.active {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+  
+  /* Gallery modal */
+  #gallery-modal {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  #gallery-modal.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  #gallery-slider .flex {
+    transition: transform 0.5s ease;
+  }
+  
+  /* Map styles */
+  #map {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .map-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to right, #9333ea, #22d3ee);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-shadow: 0 0 0 rgba(147, 51, 234, 0.4);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 20px rgba(147, 51, 234, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(147, 51, 234, 0);
+    }
+  }

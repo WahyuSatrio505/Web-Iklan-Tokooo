@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - FutureShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-black text-white font-inter">
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass" id="navbar">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center">
+            <span class="text-2xl font-bold gradient-text">FutureShop</span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="products.html" class="nav-link">Products</a>
+            <a href="#" class="nav-link">Categories</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="#" class="nav-link">Contact</a>
+          </nav>
+
+          <!-- Desktop Actions -->
+          <div class="hidden md:flex items-center space-x-6">
+            <button class="p-2 rounded-full hover-effect" aria-label="Search" id="search-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+            <a href="login.html" class="p-2 rounded-full hover-effect" aria-label="Account">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </a>
+            <a href="cart.html" class="p-2 rounded-full hover-effect relative" aria-label="Cart">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span class="cart-count hidden">0</span>
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="flex items-center space-x-4 md:hidden">
+            <a href="cart.html" class="p-2 rounded-full hover-effect relative" aria-label="Cart">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span class="cart-count hidden">0</span>
+            </a>
+            <button id="menu-toggle" class="p-2 rounded-full hover-effect" aria-label="Toggle menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="container mx-auto px-4 overflow-hidden transition-all duration-300 h-0" id="search-bar">
+        <div class="relative">
+          <input type="text" placeholder="Search products..." class="w-full p-2 pl-10 rounded-lg bg-white/10 backdrop-blur-lg border border-white/20 focus:outline-none focus:border-purple-500" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-search absolute left-3 top-2.5 text-gray-400"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/80 backdrop-blur-lg transform transition-transform duration-300 translate-x-full">
+      <div class="flex flex-col h-full justify-center items-center">
+        <button id="close-menu" class="absolute top-6 right-6 p-2 rounded-full hover-effect" aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <nav class="flex flex-col items-center space-y-8">
+          <a href="index.html" class="text-xl font-medium hover:text-purple-500 transition-colors">Home</a>
+          <a href="products.html" class="text-xl font-medium hover:text-purple-500 transition-colors">Products</a>
+          <a href="#" class="text-xl font-medium hover:text-purple-500 transition-colors">Categories</a>
+          <a href="about.html" class="text-xl font-medium hover:text-purple-500 transition-colors active">About</a>
+          <a href="#" class="text-xl font-medium hover:text-purple-500 transition-colors">Contact</a>
+          <a href="login.html" class="text-xl font-medium hover:text-purple-500 transition-colors">Login</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Spacer for fixed header -->
+    <div class="h-20"></div>
+
+    <!-- Hero Section -->
+    <section class="about-hero relative overflow-hidden py-20 md:py-32">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black to-transparent z-10"></div>
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-purple-500 opacity-20 blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-cyan-500 opacity-20 blur-3xl"></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center max-w-3xl mx-auto">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 reveal-text">
+            <span class="gradient-text">Our Story</span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 reveal-text reveal-delay-1">Pioneering the future of home technology since 2015</p>
+          <div class="flex justify-center reveal-text reveal-delay-2">
+            <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-cyan-400 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 left-0 w-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-auto">
+          <path
+            fill="rgba(0,0,0,0.8)"
+            fill-opacity="1"
+            d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div class="reveal-left">
+            <div class="relative">
+              <div class="aspect-video rounded-2xl overflow-hidden">
+                <img src="https://placehold.co/800x450" alt="FutureShop Office" class="w-full h-full object-cover" />
+              </div>
+              <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-xl overflow-hidden border-4 border-black">
+                <img src="https://placehold.co/200x200" alt="FutureShop Team" class="w-full h-full object-cover" />
+              </div>
+              <div class="absolute -top-6 -left-6 p-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/10 floating-element">
+                <div class="flex items-center">
+                  <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                  <span class="text-sm font-medium">Since 2015</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-right">
+            <h2 class="text-3xl font-bold mb-6">
+              <span class="gradient-text">Revolutionizing Home Technology</span>
+            </h2>
+            <p class="text-gray-300 mb-6">
+              FutureShop was founded with a simple yet ambitious vision: to make cutting-edge technology accessible to every home. What started as a small online store has grown into a global platform for innovative home solutions.
+            </p>
+            <p class="text-gray-300 mb-8">
+              Our team of passionate tech enthusiasts and design experts work tirelessly to curate and develop products that seamlessly blend functionality with aesthetic appeal. We believe that the future home is not just smart, but
+              intuitive, efficient, and beautiful.
+            </p>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div class="p-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/10 hover-card">
+                <div class="text-3xl font-bold gradient-text counter" data-target="150">0</div>
+                <p class="text-gray-400">Products</p>
+              </div>
+              <div class="p-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/10 hover-card">
+                <div class="text-3xl font-bold gradient-text counter" data-target="50000">0</div>
+                <p class="text-gray-400">Happy Customers</p>
+              </div>
+              <div class="p-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/10 hover-card">
+                <div class="text-3xl font-bold gradient-text counter" data-target="25">0</div>
+                <p class="text-gray-400">Countries</p>
+              </div>
+              <div class="p-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/10 hover-card">
+                <div class="text-3xl font-bold gradient-text counter" data-target="8">0</div>
+                <p class="text-gray-400">Years of Excellence</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-16 md:py-24 bg-gradient-to-b from-black to-purple-900/20">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-text">
+          <h2 class="text-3xl font-bold mb-6">
+            <span class="gradient-text">Our Core Values</span>
+          </h2>
+          <p class="text-gray-300">The principles that guide everything we do at FutureShop</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="value-card p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 relative overflow-hidden reveal-up" data-delay="0">
+            <div class="absolute -top-10 -right-10 w-20 h-20 rounded-full bg-purple-500 opacity-20 blur-xl"></div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-purple-400 flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Innovation</h3>
+              <p class="text-gray-400">We constantly push the boundaries of what's possible, embracing new technologies and ideas to create products that are ahead of their time.</p>
+            </div>
+          </div>
+
+          <div class="value-card p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 relative overflow-hidden reveal-up" data-delay="200">
+            <div class="absolute -top-10 -right-10 w-20 h-20 rounded-full bg-cyan-500 opacity-20 blur-xl"></div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-600 to-cyan-400 flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Quality</h3>
+              <p class="text-gray-400">We never compromise on quality. Every product in our catalog undergoes rigorous testing to ensure it meets our high standards of excellence.</p>
+            </div>
+          </div>
+
+          <div class="value-card p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 relative overflow-hidden reveal-up" data-delay="400">
+            <div class="absolute -top-10 -right-10 w-20 h-20 rounded-full bg-pink-500 opacity-20 blur-xl"></div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-r from-pink-600 to-pink-400 flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Customer-Centric</h3>
+              <p class="text-gray-400">Our customers are at the heart of everything we do. We listen to your feedback and continuously improve our products and services to exceed your expectations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Journey -->
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-text">
+          <h2 class="text-3xl font-bold mb-6">
+            <span class="gradient-text">Our Journey</span>
+          </h2>
+          <p class="text-gray-300">From a small startup to a global technology brand</p>
+        </div>
+
+        <div class="relative">
+          <!-- Timeline Line -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-600 to-cyan-400 hidden md:block"></div>
+
+          <!-- Timeline Items -->
+          <div class="space-y-12 relative">
+            <!-- 2015 -->
+            <div class="timeline-item md:flex items-center reveal-timeline">
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 inline-block">
+                  <h3 class="text-xl font-bold mb-2 gradient-text">2015</h3>
+                  <h4 class="text-lg font-medium mb-3">The Beginning</h4>
+                  <p class="text-gray-400">FutureShop was founded in a small garage by two tech enthusiasts with a vision to revolutionize home technology.</p>
+                </div>
+              </div>
+              <div class="timeline-dot"></div>
+              <div class="md:w-1/2 md:pl-12">
+                <div class="rounded-2xl overflow-hidden">
+                  <img src="https://placehold.co/600x400" alt="FutureShop Founding" class="w-full h-auto" />
+                </div>
+              </div>
+            </div>
+
+            <!-- 2017 -->
+            <div class="timeline-item md:flex items-center reveal-timeline">
+              <div class="md:w-1/2 md:pr-12 order-1 md:order-2 mb-8 md:mb-0">
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 inline-block">
+                  <h3 class="text-xl font-bold mb-2 gradient-text">2017</h3>
+                  <h4 class="text-lg font-medium mb-3">Expansion</h4>
+                  <p class="text-gray-400">After rapid growth, we moved to our first office and expanded our team to 15 dedicated professionals.</p>
+                </div>
+              </div>
+              <div class="timeline-dot"></div>
+              <div class="md:w-1/2 md:pl-12 md:text-right order-2 md:order-1">
+                <div class="rounded-2xl overflow-hidden">
+                  <img src="https://placehold.co/600x400" alt="FutureShop Office" class="w-full h-auto" />
+                </div>
+              </div>
+            </div>
+
+            <!-- 2019 -->
+            <div class="timeline-item md:flex items-center reveal-timeline">
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 inline-block">
+                  <h3 class="text-xl font-bold mb-2 gradient-text">2019</h3>
+                  <h4 class="text-lg font-medium mb-3">International Launch</h4>
+                  <p class="text-gray-400">FutureShop went global, expanding to 10 countries and launching our first proprietary smart home product line.</p>
+                </div>
+              </div>
+              <div class="timeline-dot"></div>
+              <div class="md:w-1/2 md:pl-12">
+                <div class="rounded-2xl overflow-hidden">
+                  <img src="https://placehold.co/600x400" alt="FutureShop Global" class="w-full h-auto" />
+                </div>
+              </div>
+            </div>
+
+            <!-- 2022 -->
+            <div class="timeline-item md:flex items-center reveal-timeline">
+              <div class="md:w-1/2 md:pr-12 order-1 md:order-2 mb-8 md:mb-0">
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 inline-block">
+                  <h3 class="text-xl font-bold mb-2 gradient-text">2022</h3>
+                  <h4 class="text-lg font-medium mb-3">Innovation Hub</h4>
+                  <p class="text-gray-400">We opened our state-of-the-art Innovation Center, dedicated to researching and developing the next generation of smart home technology.</p>
+                </div>
+              </div>
+              <div class="timeline-dot"></div>
+              <div class="md:w-1/2 md:pl-12 md:text-right order-2 md:order-1">
+                <div class="rounded-2xl overflow-hidden">
+                  <img src="https://placehold.co/600x400" alt="FutureShop Innovation Center" class="w-full h-auto" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Today -->
+            <div class="timeline-item md:flex items-center reveal-timeline">
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 inline-block">
+                  <h3 class="text-xl font-bold mb-2 gradient-text">Today</h3>
+                  <h4 class="text-lg font-medium mb-3">Leading the Future</h4>
+                  <p class="text-gray-400">Today, FutureShop is a leading global brand with over 50,000 customers in 25 countries, continuing our mission to bring the future home.</p>
+                </div>
+              </div>
+              <div class="timeline-dot"></div>
+              <div class="md:w-1/2 md:pl-12">
+                <div class="rounded-2xl overflow-hidden">
+                  <img src="https://placehold.co/600x400" alt="FutureShop Today" class="w-full h-auto" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-b from-black to-purple-900/20">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-text">
+          <h2 class="text-3xl font-bold mb-6">
+            <span class="gradient-text">Meet Our Team</span>
+          </h2>
+          <p class="text-gray-300">The passionate individuals behind FutureShop's success</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Team Member 1 -->
+          <div class="team-card reveal-up" data-delay="0">
+            <div class="relative group">
+              <div class="aspect-square rounded-2xl overflow-hidden">
+                <img src="https://placehold.co/400x400" alt="Team Member" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-6 w-full">
+                  <div class="flex space-x-3 justify-center">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7. class="feather feather-twitter">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <h3 class="text-xl font-bold">Alex Johnson</h3>
+              <p class="text-gray-400">Co-Founder & CEO</p>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="team-card reveal-up" data-delay="100">
+            <div class="relative group">
+              <div class="aspect-square rounded-2xl overflow-hidden">
+                <img src="https://placehold.co/400x400" alt="Team Member" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-6 w-full">
+                  <div class="flex space-x-3 justify-center">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <h3 class="text-xl font-bold">Sarah Chen</h3>
+              <p class="text-gray-400">Co-Founder & CTO</p>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="team-card reveal-up" data-delay="200">
+            <div class="relative group">
+              <div class="aspect-square rounded-2xl overflow-hidden">
+                <img src="https://placehold.co/400x400" alt="Team Member" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-6 w-full">
+                  <div class="flex space-x-3 justify-center">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <h3 class="text-xl font-bold">Michael Rodriguez</h3>
+              <p class="text-gray-400">Head of Design</p>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="team-card reveal-up" data-delay="300">
+            <div class="relative group">
+              <div class="aspect-square rounded-2xl overflow-hidden">
+                <img src="https://placehold.co/400x400" alt="Team Member" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-6 w-full">
+                  <div class="flex space-x-3 justify-center">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-purple-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <h3 class="text-xl font-bold">Emily Patel</h3>
+              <p class="text-gray-400">Product Director</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-text">
+          <h2 class="text-3xl font-bold mb-6">
+            <span class="gradient-text">Our Workspace</span>
+          </h2>
+          <p class="text-gray-300">Take a peek inside our innovative headquarters where the future is designed</p>
+        </div>
+
+        <div class="gallery-container">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="gallery-item md:col-span-2 reveal-gallery" data-delay="0">
+              <div class="aspect-video rounded-2xl overflow-hidden">
+                <img src="https://placehold.co/800x450" alt="FutureShop Office" class="w-full h-full object-cover hover-zoom" />
+              </div>
+            </div>
+            <div class="gallery-item reveal-gallery" data-delay="100">
+              <div class="aspect-square rounded-2xl overflow-hidden">
+                <img src="https://placehold.co/600x600" alt="FutureShop Team Meeting" class="w-full h-full object-cover hover-zoom" />
+              </div>
+            </div>
+            <div class="gallery-item reveal-gallery" data-delay="200">
+              <div class="aspect-square rounded-2xl overflow-hidden">
+                <img src="https://placehold.co/600x600" alt="FutureShop Product Design" class="w-full h-full object-cover hover-zoom" />
+              </div>
+            </div>
+            <div class="gallery-item md:col-span-2 reveal-gallery" data-delay="300">
+              <div class="aspect-video rounded-2xl overflow-hidden">
+                <img src="https://placehold.co/800x450" alt="FutureShop Innovation Lab" class="w-full h-full object-cover hover-zoom" />
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-8">
+            <button id="view-more-gallery" class="px-6 py-3 rounded-full border border-white/20 hover:bg-white/5 transition-colors inline-flex items-center">
+              <span>View Full Gallery</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Gallery Modal -->
+        <div id="gallery-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-lg flex items-center justify-center hidden">
+          <button id="close-gallery" class="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors" aria-label="Close gallery">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          <div class="w-full max-w-5xl px-4">
+            <div class="relative">
+              <div id="gallery-slider" class="overflow-hidden">
+                <div class="flex transition-transform duration-300">
+                  <div class="min-w-full p-4">
+                    <img src="https://placehold.co/1200x800" alt="Gallery Image 1" class="w-full h-auto rounded-lg" />
+                  </div>
+                  <div class="min-w-full p-4">
+                    <img src="https://placehold.co/1200x800" alt="Gallery Image 2" class="w-full h-auto rounded-lg" />
+                  </div>
+                  <div class="min-w-full p-4">
+                    <img src="https://placehold.co/1200x800" alt="Gallery Image 3" class="w-full h-auto rounded-lg" />
+                  </div>
+                  <div class="min-w-full p-4">
+                    <img src="https://placehold.co/1200x800" alt="Gallery Image 4" class="w-full h-auto rounded-lg" />
+                  </div>
+                  <div class="min-w-full p-4">
+                    <img src="https://placehold.co/1200x800" alt="Gallery Image 5" class="w-full h-auto rounded-lg" />
+                  </div>
+                  <div class="min-w-full p-4">
+                    <img src="https://placehold.co/1200x800" alt="Gallery Image 6" class="w-full h-auto rounded-lg" />
+                  </div>
+                </div>
+              </div>
+
+              <button id="gallery-prev" class="absolute left-6 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors" aria-label="Previous image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button id="gallery-next" class="absolute right-6 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors" aria-label="Next image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div class="text-center mt-4">
+              <p id="gallery-caption" class="text-lg">Image 1 of 6</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 md:py-24 bg-gradient-to-b from-black to-purple-900/20">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-text">
+          <h2 class="text-3xl font-bold mb-6">
+            <span class="gradient-text">What Our Customers Say</span>
+          </h2>
+          <p class="text-gray-300">Hear from the people who have transformed their homes with our products</p>
+        </div>
+
+        <div class="relative testimonial-slider-container">
+          <div id="testimonial-slider" class="overflow-hidden">
+            <div class="flex transition-transform duration-500">
+              <!-- Testimonial 1 -->
+              <div class="min-w-full md:min-w-[33.333%] p-4">
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 h-full">
+                  <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <img src="https://placehold.co/100x100" alt="Customer" class="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <h3 class="font-bold">Jennifer K.</h3>
+                      <p class="text-sm text-gray-400">Smart Home Enthusiast</p>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div class="flex text-yellow-400 mb-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="text-gray-300">
+                    "FutureShop has completely transformed my living space. Their smart home products are not only cutting-edge but also beautifully designed. The customer service is exceptional, and I couldn't be happier with my purchase."
+                  </p>
+                </div>
+              </div>
+
+              <!-- Testimonial 2 -->
+              <div class="min-w-full md:min-w-[33.333%] p-4">
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 h-full">
+                  <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <img src="https://placehold.co/100x100" alt="Customer" class="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <h3 class="font-bold">Michael T.</h3>
+                      <p class="text-sm text-gray-400">Tech Professional</p>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div class="flex text-yellow-400 mb-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="text-gray-300">
+                    "As someone who works in tech, I have high standards for the products I bring into my home. FutureShop consistently exceeds my expectations with their innovative solutions and attention to detail. Their smart kitchen
+                    system has revolutionized how I cook."
+                  </p>
+                </div>
+              </div>
+
+              <!-- Testimonial 3 -->
+              <div class="min-w-full md:min-w-[33.333%] p-4">
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 h-full">
+                  <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <img src="https://placehold.co/100x100" alt="Customer" class="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <h3 class="font-bold">Sophia R.</h3>
+                      <p class="text-sm text-gray-400">Interior Designer</p>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div class="flex text-yellow-400 mb-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-star-half"
+                      >
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="text-gray-300">
+                    "What sets FutureShop apart is their perfect blend of functionality and aesthetics. As an interior designer, I recommend their products to all my clients who want a modern, sophisticated home without compromising on
+                    style."
+                  </p>
+                </div>
+              </div>
+
+              <!-- Testimonial 4 -->
+              <div class="min-w-full md:min-w-[33.333%] p-4">
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 h-full">
+                  <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <img src="https://placehold.co/100x100" alt="Customer" class="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <h3 class="font-bold">David L.</h3>
+                      <p class="text-sm text-gray-400">Business Owner</p>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div class="flex text-yellow-400 mb-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="text-gray-300">
+                    "I've outfitted both my home and office with FutureShop products. The energy efficiency and time-saving features have made a significant impact on my daily routine and bottom line. Their customer support team is also
+                    top-notch."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button id="testimonial-prev" class="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors hidden md:block" aria-label="Previous testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button id="testimonial-next" class="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors hidden md:block" aria-label="Next testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex justify-center mt-8 md:hidden">
+          <button id="testimonial-prev-mobile" class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors mx-2" aria-label="Previous testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button id="testimonial-next-mobile" class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors mx-2" aria-label="Next testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex justify-center mt-8">
+          <div id="testimonial-dots" class="flex space-x-2">
+            <button class="w-3 h-3 rounded-full bg-white active" data-index="0"></button>
+            <button class="w-3 h-3 rounded-full bg-white/30" data-index="1"></button>
+            <button class="w-3 h-3 rounded-full bg-white/30" data-index="2"></button>
+            <button class="w-3 h-3 rounded-full bg-white/30" data-index="3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-text">
+          <h2 class="text-3xl font-bold mb-6">
+            <span class="gradient-text">Frequently Asked Questions</span>
+          </h2>
+          <p class="text-gray-300">Find answers to common questions about FutureShop</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <div class="space-y-6">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 reveal-up" data-delay="0">
+              <button class="faq-question w-full flex justify-between items-center text-left">
+                <h3 class="text-xl font-medium">What makes FutureShop different from other tech retailers?</h3>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-plus faq-icon transition-transform"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+              <div class="faq-answer mt-4 text-gray-300 hidden">
+                <p>
+                  FutureShop stands out through our commitment to innovation, quality, and customer experience. Unlike traditional retailers, we don't just sell products—we curate cutting-edge technology that seamlessly integrates into your
+                  lifestyle. Our team rigorously tests every item to ensure it meets our high standards, and we provide personalized support throughout your smart home journey.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 reveal-up" data-delay="100">
+              <button class="faq-question w-full flex justify-between items-center text-left">
+                <h3 class="text-xl font-medium">Do you offer installation services for your products?</h3>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-plus faq-icon transition-transform"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+              <div class="faq-answer mt-4 text-gray-300 hidden">
+                <p>
+                  Yes, we offer professional installation services for all our smart home products. Our certified technicians ensure that your devices are properly set up, connected to your home network, and optimized for your specific
+                  needs. We also provide a walkthrough tutorial to help you get the most out of your new technology.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 reveal-up" data-delay="200">
+              <button class="faq-question w-full flex justify-between items-center text-left">
+                <h3 class="text-xl font-medium">What is your warranty policy?</h3>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-plus faq-icon transition-transform"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+              <div class="faq-answer mt-4 text-gray-300 hidden">
+                <p>
+                  All FutureShop products come with a standard 2-year warranty that covers manufacturing defects and normal wear and tear. We also offer extended warranty options for additional peace of mind. Our Premium Protection Plan
+                  includes accidental damage coverage and priority support services.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 reveal-up" data-delay="300">
+              <button class="faq-question w-full flex justify-between items-center text-left">
+                <h3 class="text-xl font-medium">Do you ship internationally?</h3>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-plus faq-icon transition-transform"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+              <div class="faq-answer mt-4 text-gray-300 hidden">
+                <p>
+                  Yes, we currently ship to 25 countries worldwide. International orders typically arrive within 7-14 business days, depending on your location and customs processing. All international shipments include tracking information
+                  and insurance. Please note that import duties and taxes may apply depending on your country's regulations.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 reveal-up" data-delay="400">
+              <button class="faq-question w-full flex justify-between items-center text-left">
+                <h3 class="text-xl font-medium">How can I become a FutureShop partner or distributor?</h3>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-plus faq-icon transition-transform"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+              <div class="faq-answer mt-4 text-gray-300 hidden">
+                <p>
+                  We're always looking for strategic partners who share our vision for the future of home technology. To apply for our partnership program, please visit our Partners page or contact our business development team at
+                  partners@futureshop.com. We offer competitive commission rates, marketing support, and exclusive training for our authorized distributors.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Map -->
+    <section class="py-16 md:py-24 bg-gradient-to-b from-black to-purple-900/20">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-text">
+          <h2 class="text-3xl font-bold mb-6">
+            <span class="gradient-text">Visit Our Headquarters</span>
+          </h2>
+          <p class="text-gray-300">Experience our innovation center and showroom in person</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="reveal-left">
+            <div class="rounded-2xl overflow-hidden h-[400px] relative">
+              <!-- Replace with actual map implementation -->
+              <div id="map" class="w-full h-full bg-gray-800">
+                <!-- Interactive map will be loaded here via JavaScript -->
+                <img src="https://placehold.co/800x400" alt="Map Location" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center p-4 rounded-lg bg-black/70 backdrop-blur-sm">
+                    <p>Interactive Map Loading...</p>
+                    <p class="text-sm text-gray-400">Please enable JavaScript to view the map</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-right">
+            <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10">
+              <h3 class="text-2xl font-bold mb-4 gradient-text">FutureShop Innovation Center</h3>
+
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-map-pin text-purple-500 mr-3 mt-1"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <div>
+                    <h4 class="font-medium">Address</h4>
+                    <p class="text-gray-400">123 Tech Street, Digital City, CA 10001</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-clock text-purple-500 mr-3 mt-1"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <div>
+                    <h4 class="font-medium">Hours</h4>
+                    <p class="text-gray-400">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p class="text-gray-400">Saturday: 10:00 AM - 4:00 PM</p>
+                    <p class="text-gray-400">Sunday: Closed</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-phone text-purple-500 mr-3 mt-1"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                  <div>
+                    <h4 class="font-medium">Contact</h4>
+                    <p class="text-gray-400">Phone: +1 (555) 123-4567</p>
+                    <p class="text-gray-400">Email: visit@futureshop.com</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-info text-purple-500 mr-3 mt-1"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                  <div>
+                    <h4 class="font-medium">Visitor Information</h4>
+                    <p class="text-gray-400">Tours available by appointment</p>
+                    <p class="text-gray-400">Product demonstrations daily at 11 AM and 3 PM</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6">
+                <a href="#" class="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-cyan-400 text-white font-medium transition-transform hover:scale-105 hover:shadow-lg">
+                  <span>Schedule a Visit</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar ml-2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto p-8 md:p-12 rounded-2xl bg-gradient-to-r from-purple-900/40 to-cyan-900/40 backdrop-blur-lg border border-white/10 relative overflow-hidden reveal-scale">
+          <div class="absolute -top-24 -left-24 w-48 h-48 rounded-full bg-purple-500 opacity-20 blur-3xl"></div>
+          <div class="absolute -bottom-24 -right-24 w-64 h-64 rounded-full bg-cyan-500 opacity-20 blur-3xl"></div>
+
+          <div class="relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+              <span class="gradient-text">Join Our Journey</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Be part of the future. Explore our innovative products and transform your home today.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="products.html" class="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-cyan-400 text-white font-medium transition-transform hover:scale-105 hover:shadow-lg flex items-center justify-center">
+                <span>Explore Products</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right ml-2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#" class="px-8 py-3 rounded-full border border-white/20 hover:bg-white/5 transition-colors flex items-center justify-center">
+                <span>Contact Us</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-transparent to-black/20 backdrop-blur-sm pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Company Info -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">
+              <span class="gradient-text">FutureShop</span>
+            </h3>
+            <p class="text-gray-400 mb-4">Your one-stop destination for modern home essentials and cutting-edge technology.</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube">
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                  ></path>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="products.html" class="text-gray-400 hover:text-purple-500 transition-colors"> All Products </a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors"> Categories </a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors"> Special Offers </a>
+              </li>
+              <li>
+                <a href="about.html" class="text-gray-400 hover:text-purple-500 transition-colors"> About Us </a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors"> Blog </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Customer Service -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors"> Contact Us </a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors"> FAQ </a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors"> Shipping & Returns </a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors"> Warranty </a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors"> Privacy Policy </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-map-pin text-purple-500 mr-3 mt-0.5"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span class="text-gray-400">123 Tech Street, Digital City, 10001</span>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-phone text-purple-500 mr-3"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+                <span class="text-gray-400">+1 (555) 123-4567</span>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-mail text-purple-500 mr-3"
+                >
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span class="text-gray-400">support@futureshop.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-12 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; <span id="current-year"></span> FutureShop. All rights reserved.</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-500 hover:text-purple-500 text-sm transition-colors"> Terms of Service </a>
+              <a href="#" class="text-gray-500 hover:text-purple-500 text-sm transition-colors"> Privacy Policy </a>
+              <a href="#" class="text-gray-500 hover:text-purple-500 text-sm transition-colors"> Cookie Policy </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
