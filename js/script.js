@@ -83,11 +83,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
         // Update content based on slide index
-        const titles = ["Next Generation Smart Home", "Premium Audio Experience", "Summer Sale"];
+        const titles = ["Generasi Terbaru Rumah Pintar", "Pengalaman Audio Berkualitas", "Diskon Musim Panas!!"];
 
-        const descriptions = ["Transform your living space with cutting-edge technology", "Immerse yourself in crystal clear sound", "Up to 50% off on selected items"];
+        const descriptions = ["Ubah Ruangan Anda Dengan Teknologi Terbaru", "Rasakan Sensai Suara Yang Berkualitas", "Dapatkan Diskon Sampai Dengan 50%"];
 
-        const ctas = ["Shop Now", "Explore Collection", "View Deals"];
+        const ctas = ["Beli Sekarang", "Jelahi Koleksi"];
 
         const h1 = heroContent.querySelector("h1");
         const p = heroContent.querySelector("p");

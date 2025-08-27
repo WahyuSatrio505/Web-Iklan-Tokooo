@@ -1,3 +1,9 @@
+/* khusus fontt */
+@import url("https://fonts.googleapis.com/css2?family=Mogra&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+/* end */
+
 /* Base styles */
 :root {
   --foreground-rgb: 255, 255, 255;
@@ -42,7 +48,7 @@ body {
 
 /* Loading shimmer effect */
 .shimmer {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%);
+  background: linear-gradient(to right, rgba(198, 14, 14, 0.05) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
@@ -81,6 +87,31 @@ body {
   animation: pulse-custom 1.5s infinite;
 }
 
+/* semua teks */
+.font-medium {
+  color: #ffffff;
+  font-family: "Mogra", system-ui;
+  letter-spacing: 1.2px;
+  font-size: 1rem;
+}
+
+.text-atas {
+  font-family: "Knewave", system-ui;
+  font-size: 1.3rem; /* bisa diatur sesuai kebutuhan */
+  background: linear-gradient(45deg, #fa770d, #f5d042); /* ungu → biru */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase; /* biar lebih tegas */
+  letter-spacing: 2px; /* jarak antar huruf */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* kasih efek bayangan tipis */
+}
+
+.text-mobile {
+  color: #ffffff;
+}
+
+/* end semua teks */
 /* Loader */
 .loader {
   width: 48px;
@@ -140,8 +171,8 @@ body {
   position: absolute;
   top: -5px;
   right: -5px;
-  background: linear-gradient(to right, #9333ea, #ec4899);
-  color: white;
+  background: linear-gradient(to right, #ea6133, #48ec9d);
+  color: rgb(235, 220, 220);
   font-size: 0.75rem;
   border-radius: 9999px;
   width: 20px;
